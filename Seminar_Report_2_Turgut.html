@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<style type="text/css">
+.knitr .inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.rimage .left {
+  text-align: left;
+}
+.rimage .right {
+  text-align: right;
+}
+.rimage .center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+<h1 style="color:blue;">Seminar Report 2</h1>
+</head>
+
+
+
+<H1>Name: Alper Turgut</H1>
+<H4>Seminar Speaker's Name: Claudia Monaco</H4>
+<H4>Seminar Speaker's Title: Professor of Cardiovascular Inflammation</H4>
+<H4>Seminar Speaker's Affiliation:  University of Oxford</H4>
+<H4>Date:11/14/18</H4>
+<H4>Time: 11:00 AM - 12:00 PM</H4>
+<H4>Seminar Title: Immune heterogeneity in the atherosclerotic plaque</H4>
+
+<p>Seminar Summary:
+<p>Dr. Monaco discussed the identification of myeloid cell subtypes in atherosclerotic mouse aortas. The role of inflammation in atherosclerosis is prominent and can lead to heart failure due to inflammation, plaque rupture, and thrombus formation. Therefore, it is pertinent to conduct high-throughput experiments to study the composition of atherscleortic tissue. In particular, Dr. Monaco stressed the importance of being able to discriminate between pathogenic and reparative cell subtypes in a atherosclerotic tissue. Overall, she aimed to highlight myeloid dynamics in atherosclerosis as well as elucidate determinants of functional specification of vascular macrophages. This was accomplished by conducting "deep phenotyping" of vascular leukocyte populations using CyTOF or cytometry by time of flight. This method essentially traces cell surface markers like glcyoproteins, carbohydrates, lectins, and other plasma membrane components. Tracing of these markers allow for the identification and quantification on a cell count level of biological samples. The main experiment used to accomplish this was use of Apolipoprotein E-deficient (ApoE-/-) mise fed either a chow diet or high- fat diet. The recruited phenotype was mapped in both populations. 
+</p>
+<p>There were many questions addressed in this seminar, but the main goal related to data science was dimension-reduction of high dimensionality data to obtain phenotypic clusters of leukocyte cells. This clustering method was used to answer the broad research question of what myeloid subpopulations are recruited to atherosclerotic sites of inflammation. Once what kinds of myeloid subpopulations were identified, there would be opportunities to identify clusters that differed by certain distances in features consisting of cell surface markers (like CD45 for example). </p>
+<p>ApoE-/- mouse were fed with either high-fat or normal chow diets. Aorta was harvested and single-cell suspensions were generated. These were conjugated to various antibodies for use in CyTOF. Data was normalized and debarcoded. The dimensionality reduction software viSNE was used following normalization. Independent research (Dr. Monaco did not go into depth on this portion of data analysis) reveals that this software uses t-Distributed Stochastic Neighbor Embedding (t-SNE) algorithm. Principal Component Analysis is sometimes used for CyTOF, however the paper mentioned that was found independently states that it may not capture non-linear trends seen in flow data. Following dimension reduction, gated cluster profiles were analyzed using Bioconductor package in R.  </p>
+<p> The take home messages from the seminar were more medically oriented rather than data-oriented. This makes sense as Dr. Monaco was presenting this work for the CVRC, which has research more geared towards medical/physiological/translational relevance. However, the importance of her data analysis is paramount as it is the bulk of what the research is rooted upon. The main physiological message is that certain deleterious macrophage subtypes (such as CD11c+, found to be upregulated by transcription factor IRF5 which also results in formation of necrotic core) are increased in comparison to resident leukocytes in atherosclerotic aortas. The main data-science takeaway I found was the usefulness of dimension reduction. The dimensionality reduction algorithm used in analysis of this dataset allowed for generation of coherent, concise data. PCA may not always be applicable to every dataset studied.
+</p>
+<p>This project may not have direct impact in our project, but the idea of dimensional reduction can guide in similar projects involving CHIP with multiple proteins of study. In our project, we are only studying binding of one protein (i.e. one feature). </p>
+<p>My first question to the speaker would be whether she could consider a future endeavor in using machine learning to predict whether a heart tissue was showing signs of atherosclerosis. Since atherosclerosis is an inflammatory disease, a machine learning algorithm could be used to predict whether an aorta, for example, was beginning to show signs of atherosclerosis using data of myeloid cluster/subset types. This would be a very interesting project I believe. It would allow for the use of cell type composition in a tissue to predict for the susceptibility to a harmful disease. My next question would be next steps for a clinical trial using human samples. The current experiment used mouse samples, which may not be translatable to human tissue. </p>
+</body>
+</html>
